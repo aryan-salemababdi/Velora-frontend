@@ -9,7 +9,6 @@ import rocketImg from '../../../../public/logo/logo3.png';
 const HeroSection = () => {
   return (
     <section className="relative isolate overflow-hidden bg-black text-white min-h-[90vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20 sm:py-28">
-      {/* Background gradients */}
       <div
         className="absolute inset-0 -z-10 opacity-30 blur-3xl"
         style={{
@@ -28,6 +27,7 @@ const HeroSection = () => {
               width={60}
               height={60}
               className="animate-bounce sm:w-16 sm:h-16"
+              loading='lazy'
             />
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#00ADD8] to-[#00CFFF] drop-shadow-lg text-lg sm:text-2xl md:text-3xl">
               Velora
