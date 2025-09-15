@@ -1,19 +1,7 @@
 'use client';
 import dynamic from 'next/dynamic';
-
-
-
-const HeroSection = dynamic(
-  () => import('@/components/organisme/HeroSection/HeroSection'),
-  { ssr: false },
-);
-
-
-const WhyTurboTrackSection = dynamic(
-  () =>
-    import('@/components/organisme/WhyTurboTrackSection/WhyTurboTrackSection'),
-  { ssr: false },
-);
+import HeroSection from '@/components/organisme/HeroSection/HeroSection';
+import WhyTurboTrackSection from '@/components/organisme/WhyTurboTrackSection/WhyTurboTrackSection';
 
 const CodeExampleSection = dynamic(
   () => import('@/components/organisme/CodeExampleSection/CodeExampleSection'),
