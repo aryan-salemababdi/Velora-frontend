@@ -18,12 +18,9 @@ const navItems = [
 export const Sidebar = () => {
   return (
     <aside className="w-64 bg-[#0d1b2a] text-white border-r border-gray-800 p-4 space-y-4">
-      {/* لوگو با لینک به صفحه اصلی */}
       <Link href="/" className="flex items-center justify-center mb-6">
         <Image src={logo} alt="Velora Logo" width={120} height={40} />
       </Link>
-
-      {/* آیتم‌های ناوبری */}
       <div className="space-y-2">
         {navItems.map((item) => (
           <SidebarItem key={item.href} href={item.href} label={item.label} />
