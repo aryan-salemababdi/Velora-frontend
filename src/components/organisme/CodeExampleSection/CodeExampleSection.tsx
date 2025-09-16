@@ -1,9 +1,11 @@
-"use client";
-import { motion } from "framer-motion";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
-import { Button } from "@/components/atom/Button/Button";
-import { useState } from "react";
+'use client';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { Button } from '@/components/atom/Button/Button';
+import { useState } from 'react';
+import { twMerge } from 'tailwind-merge';
 
 const veloraSnippet = `// main.go
 package main
@@ -67,12 +69,11 @@ const CodeExampleSection = () => {
           {veloraSnippet}
         </SyntaxHighlighter>
 
-        {/* Copy button */}
         <button
           onClick={handleCopy}
           className="absolute top-4 right-4 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium transition"
         >
-          {copied ? "Copied!" : "Copy"}
+          {copied ? 'Copied!' : 'Copy'}
         </button>
       </motion.div>
 
@@ -83,8 +84,12 @@ const CodeExampleSection = () => {
         transition={{ duration: 0.7, delay: 0.2 }}
         className="flex justify-center mt-8"
       >
-        <Button className="bg-blue-500 hover:bg-blue-600 px-6 py-3 text-white font-semibold rounded-lg">
-          Get Started
+        <Button
+          className={twMerge(
+            'bg-[#00ADD8] text-black hover:bg-[#00CFFF] px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base font-semibold',
+          )}
+        >
+          <Link href="/documentation/introduction">Get Started</Link>
         </Button>
       </motion.div>
     </section>

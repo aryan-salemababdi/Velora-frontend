@@ -1,5 +1,6 @@
 'use client';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { Button } from '@/components/atom/Button/Button';
 import { twMerge } from 'tailwind-merge';
 import Image from 'next/image';
@@ -7,6 +8,8 @@ import { FaGithub } from 'react-icons/fa';
 import rocketImg from '../../../../public/logo/logo3.png';
 
 const HeroSection = () => {
+  const router = useRouter();
+
   return (
     <section className="relative isolate overflow-hidden bg-black text-white min-h-[90vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20 sm:py-28">
       <div
@@ -27,7 +30,7 @@ const HeroSection = () => {
               width={60}
               height={60}
               className="animate-bounce sm:w-16 sm:h-16"
-              loading='lazy'
+              loading="lazy"
             />
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#00ADD8] to-[#00CFFF] drop-shadow-lg text-lg sm:text-2xl md:text-3xl">
               Velora
@@ -53,7 +56,7 @@ const HeroSection = () => {
               'bg-[#00ADD8] text-black hover:bg-[#00CFFF] px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base font-semibold',
             )}
           >
-            Get Started
+            <Link href="/documentation/introduction">Get Started</Link>
           </Button>
 
           <Link
