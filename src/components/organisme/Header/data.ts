@@ -11,14 +11,14 @@ export const items: ItemsTypes[] = [
     title: "Documentation",
     href: "/documentation/introduction",
   },
-  {
-    id: 3,
-    title: "Pricing",
-    href: "#pricing",
-  },
+  // {
+  //   id: 3,
+  //   title: "Pricing",
+  //   href: "#pricing",
+  // },
   {
     id: 4,
     title: "Contact",
-    href: "#pontact",
+    href: "#contact",
   },
 ];

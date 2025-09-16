@@ -30,7 +30,7 @@ export default function ContactUsSection() {
   };
 
   return (
-    <section className="w-full py-20 px-4 bg-gradient-to-br from-[#00ADD811] via-white to-[#00ADD822] relative">
+    <section id="contact" className="w-full py-20 px-4 bg-gradient-to-br from-[#00ADD811] via-white to-[#00ADD822] relative">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
         <motion.div
           initial={{ opacity: 0, x: -30 }}

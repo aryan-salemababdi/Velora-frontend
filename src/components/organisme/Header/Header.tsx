@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import { useState, useEffect } from "react";
-import Link from "next/link";
-import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
-import { items } from "./data";
-import logo from "../../../../public/logo/logo3.png";
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import { motion, AnimatePresence } from 'framer-motion';
+import { items } from './data';
+import logo from '../../../../public/logo/logo3.png';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,16 +16,16 @@ const Header = () => {
 
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 10);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
   return (
     <header
       className={`fixed top-0 z-50 w-full transition-all duration-300 ${
         isScrolled
-          ? "bg-black/90 shadow-xl backdrop-blur border-b border-[#00ADD822]"
-          : "bg-transparent"
+          ? 'bg-black/90 shadow-xl backdrop-blur border-b border-[#00ADD822]'
+          : 'bg-transparent'
       }`}
     >
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
@@ -53,6 +53,18 @@ const Header = () => {
             <Link
               key={item.id}
               href={item.href}
+              onClick={(e) => {
+                if (item.href === '#contact') {
+                  e.preventDefault();
+                  const section = document.getElementById('contact');
+                  if (section) {
+                    section.scrollIntoView({ behavior: 'smooth' });
+                    closeMenu();
+                  }
+                } else {
+                  closeMenu();
+                }
+              }}
               className="transition-all duration-200 hover:text-[#00ADD8]"
             >
               {item.title}
@@ -96,7 +108,7 @@ const Header = () => {
           <motion.div
             data-testid="mobile-menu"
             initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
+            animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
             className="md:hidden bg-black/90 backdrop-blur border-t border-[#00ADD822]"
@@ -106,7 +118,23 @@ const Header = () => {
                 <Link
                   key={item.id}
                   href={item.href}
-                  onClick={closeMenu}
+                  onClick={(e) => {
+                    if (item.href === '#contact') {
+                      e.preventDefault();
+                      closeMenu();
+                      setTimeout(() => {
+                        const section = document.getElementById('contact');
+                        if (section) {
+                          section.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start',
+                          });
+                        }
+                      }, 300);
+                    } else {
+                      closeMenu();
+                    }
+                  }}
                   className="hover:text-[#00ADD8] transition-all duration-200"
                 >
                   {item.title}
