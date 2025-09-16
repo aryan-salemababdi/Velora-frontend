@@ -8,8 +8,8 @@ export const items: ItemsTypes[] = [
   },
   {
     id: 2,
-    title: "Features",
-    href: "#features",
+    title: "Documentation",
+    href: "/documentation/introduction",
   },
   {
     id: 3,
