@@ -22,7 +22,7 @@ const HowItWorksSection = () => {
         className="max-w-3xl mx-auto text-center mb-16"
       >
         <h2 className="text-4xl font-extrabold text-gray-900">How It Works</h2>
-        <p className="mt-4 text-lg text-gray-600">
+        <p className="mt-4 text-lg text-gray-600"> 
           Just 3 simple steps to run your first powerful load test.
         </p>
       </motion.div>
